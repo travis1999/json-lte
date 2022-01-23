@@ -28,9 +28,9 @@ typedef struct map_entry_t {
 } MapEntry;
 
 struct hash_map_t{
-    struct map_entry_t* entries;  // hash slots
-    size_t capacity;    // size of _entries array
-    size_t length;      // number of items in hash table
+    struct map_entry_t* entries;
+    size_t capacity;
+    size_t length;
 };
 
 
@@ -50,5 +50,9 @@ typedef struct iterator_t
 
 Iterator new_map_iterator(HashMap *map);
 bool iter_next(Iterator *iter);
+
+bool map_expand(HashMap *map);
+const char *map_set_entry(MapEntry *entries, size_t capacity, const char *key, Value *value, size_t *length);
+
 
 #endif
