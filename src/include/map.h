@@ -15,10 +15,11 @@ typedef struct value_t
     int64_t int_value;
     double float_value;
     char *string_value;
-    struct value_t **values;
+    struct value_t **array_value;
     HashMap *object;
     void *user_t;
   };
+  size_t size;
 } Value;
 
 typedef struct map_entry_t {
